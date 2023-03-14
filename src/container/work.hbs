@@ -1,0 +1,74 @@
+<div>
+    {{#with main}}
+    <main>
+        <section>
+            {{> title data="Work history" big=true}}
+            <div>
+                <ul>
+                    {{#each works}}
+                    <li>
+                        <div>{{position}}</div>
+                        <br>
+                        <div>{{duration.from}} -
+                            {{#if duration.to}} {{duration.to}} {{else}} (еще работ) {{/if}}</div>
+                        <br>
+                        <div>{{> link text=company.name href=company.url blank=true noline=true}}</div>
+                        <br>
+                        <br>
+                        <div><strong>Projects ({{projectAmount}})</strong></div>
+                        <br>
+                        <ul>
+                            {{#each projects}}
+                            <li>
+
+                                <div>{{> link text=name href=url blank=true noline=true}}</div>
+
+                                <div>
+                                    <p>{{about}}</p>
+                                </div>
+                                <br>
+
+                                <div>
+                                    <em>Proeject stacks ({{stackAmount}})</em>
+                                </div>
+
+                                <br>
+
+                                <div>
+                                    <ul>
+                                        {{#each stacks}}
+                                        <li>{{name}}</li>
+                                        {{/each}}
+                                    </ul>
+                                </div>
+
+                                <br>
+
+                                <em>Project awards ({{awardAmount}})</em>
+
+                                <br>
+
+                                <div>
+                                    <ul>
+                                        {{#each awards}}
+                                        <li>{{name}}</li>
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <br>
+                                <b>{{> link text=name href=url blank=true noline=true}} </b>
+
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </li>
+                    <br>
+                    <hr>
+                    {{/each}}
+                </ul>
+                <div>
+        </section>
+    </main>
+    {{/with}}
+
+</div>
