@@ -1,0 +1,106 @@
+<div>
+    {{#with Person}}
+    <main>
+
+        <div>
+            <h1>{{name}}</h1>
+        </div>
+        <br>
+        <div>
+            <em>{{age}}</em>
+        </div>
+        <br>
+        <div>
+            <em>{{gender}}</em>
+        </div>
+        <br>
+        <div>
+            <ul>
+                {{#with address}}
+                <li>{{street}} {{city}} {{state}} {{zip}} {{country}}</li>
+                {{/with}}
+            </ul>
+        </div>
+        <br>
+        <hr>
+        <section>
+            <ul>
+                {{#each ducation}}
+                <li>{{degree}} {{major}} {{university}}
+                    {{graduationYear}}</li>
+                {{/each}}
+            </ul>
+        </section>
+        <section>
+            <ul>
+                {{#each workExperience}}
+                <li>
+                    {{company}} {{title}} {{startDate}}
+                    {{endDate}} {{responsibilities}} {{year_founded}}
+                    {{industry}}
+                    {{/each}}
+                </li>
+                <br>
+                <ul>
+                    {{#each workExperience.employees}}
+                    <li> {{name}} {{position}} {{department}}</li>
+                    {{/each}}
+                </ul>
+                <br>
+                <ul>
+                    {{#each workExperience.employees.projects}}
+                    <li>{{name}} {{description}} {{status}}</li>
+                    {{/each}}
+                </ul>
+                <br>
+                <ul>
+                    {{#each workExperience.employees.projects.teams}}
+                    <li>{{team_name}}</li>
+                    {{/each}}
+                </ul>
+                <br>
+                <ul>
+                    {{#each workExperience.employees.projects.teams.team_leader}}
+                    <li> {{name}} {{title}} {{email}}</li>
+                    {{/each}}
+                </ul>
+                <br>
+                <ul>
+                    {{#each workExperience.employees.projects.teams.team_leader.team_members}}
+                    <li>{{name}} {{title}} {{email}} </li>
+                    {{/each}}
+                </ul>
+                <br>
+                <ul>
+                    {{#each workExperience.employees.projects.teams.team_leader.team_members.skills}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+                <br>
+                <ul>
+                    {{#each workExperience.employees.projects.teams.team_leader.team_members.projects}}
+                    <li> {{name}} {{description}} </li>
+                    {{/each}}
+                </ul>
+                <br>
+                <ul>
+                    {{#each workExperience.employees.projects.teams.team_leader.team_members.projects.technologies}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+                <br>
+                <ul>
+                    {{#each workExperience.employees.projects.teams.team_leader.team_members.projects.team_members}}
+                    <li>{{name -title}} {{name -title}}</li>
+                    {{/each}}
+                </ul>
+
+                {{/each}}
+            </ul>
+        </section>
+
+
+
+    </main>
+    {{/with}}
+</div>
