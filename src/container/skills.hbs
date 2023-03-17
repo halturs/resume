@@ -4,7 +4,7 @@
 --}}
 
 <div>
-
+    {{#each main}}
     <main>
         <section>
             {{> title data='My hobbies'}}
@@ -22,7 +22,7 @@
             <ul>
                 {{#each main.skills}}
                 <li>
-
+                    {{name}}
 
                     {{#if point includezero=true}} ({{point}}) {{/if}}
                     {{#if istop}} (top) {{/if}}
@@ -37,8 +37,20 @@
                 {{/each}}
             </ul>
         </section>
-    </main>
 
+        <section>
+            {{>title data "All hobbies"}}
+            <ul>
+                {{#each hobbies}}
+                <li>
+                    {{name}}
+                    {{#if isMan}} (favorit) {{/if}}
+                </li>
+                {{/each}}
+            </ul>
+        </section>
+    </main>
+    {{/each}}
 </div>
 
 {{!--
