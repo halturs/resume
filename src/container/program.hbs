@@ -1,0 +1,112 @@
+<div>
+    {{#with program}}
+
+    {{#each excursion}}
+    <div>
+        <em>{{name}}</em>
+    </div>
+    <br>
+    <div>
+        <ul>
+            {{#with location}}
+            <li>{{city}} {{country}}</li>
+            {{/with}}
+        </ul>
+    </div>
+    <br>
+    <div>
+        <em>{{date}}</em>
+    </div>
+    <br>
+    {{#with excursion.program}}
+    <section>
+        <div>
+            <em>{{name}}</em>
+        </div>
+        <br>
+        <div>
+            <em>{{type}}</em>
+        </div>
+        <br>
+        <div>
+            <em>{{duration}}</em>
+        </div>
+        <br>
+        {{#with excursion.program.details.museum}}
+        <div>
+            <em>{{name}}</em>
+        </div>
+        <br>
+        <div>
+            <ul>
+                {{#if location}}
+                <li>{{address}} {{city}} {{country}}</li>
+                {{/if}}
+            </ul>
+        </div>
+        <br>
+        <div>
+            <ul>
+                {{#if exhibits}}
+                <li>{{name artist description audio_guide}}</li>
+                <li>{{name artist description audio_guide}}</li>
+                {{/if}}
+            </ul>
+        </div>
+        {{/with}}
+        <br>
+        {{#with excursion.program.details.guide}}
+        <li>{{name}} {{language}} {{rating}}</li>
+        {{/with}}
+        <br>
+    </section>
+    {{/with}}
+    <br>
+    <section>
+        <div>
+            <em>{{name}}</em>
+        </div>
+        <br>
+        <div>
+            <em>{{type}}</em>
+        </div>
+        <br>
+        <div>
+            <em>{{duration}}</em>
+        </div>
+        <br>
+        {{#with excursion.program.details.venue}}
+        <div>
+            <em>{{name}}</em>
+        </div>
+        <br>
+        <div>
+            <ul>
+                {{#if location}}
+                <li>{{address}} {{city}} {{country}}</li>
+                {{/if}}
+            </ul>
+        </div>
+        {{#with }}
+        <br>
+        {{#with excursion.program.details.performers}}
+        {{Name}} {{type}}
+        {{Name}} {{type}}
+        {{/with}}
+        <br>
+        {{#with excursion.program.details.guide}}
+        <div>
+            <em>{{name}}</em>
+        </div>
+        <br>
+        <div>
+            <em>{{language}}</em>
+        </div>
+        <br>
+        <div>
+            <em>{{rating}}</em>
+        </div>
+        {{/with}}
+    </section>
+    {{/with}}
+</div>
