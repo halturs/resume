@@ -1,0 +1,123 @@
+<div>
+    <div>
+        <strong>{{make}}</strong>
+        <br>
+        <aricle>{{model}}</aricle>
+        <br>
+        <a>{{year}}</a>
+        <br>
+        <em>{{color}}</em>
+    </div>
+    <hr>
+    {{#with features.interior.seats}}
+    <ul>
+        <li>{{material}}</li>
+        <li>{{color}}</li>
+        <li>{{#if heated includezero=true}} (yes) {{/if}}</li>
+        <li>{{#if ventilated includezero=true}} (yes) {{/if}}</li>
+    </ul>
+    {{/with}}
+    <hr>
+    {{#with features.interior.dashboard}}
+    <ul>
+        <li>{{material}}</li>
+        <li>{{color}}</li>
+        {{#with display}}
+        <li>{{type}}</li>
+        <li>{{size}}</li>
+        <li>{{resolution}}</li>
+        <li>{{#if touchscreen includezero=true}} (yes) {{/if}}</li>
+        {{/with}}
+    </ul>
+    {{/with}}
+    <hr>
+    {{#with features.interior.audio}}
+    <ul>
+        <li>{{system}}</li>
+        <li>{{speakers}}</li>
+        <li>{{#if subwoofer includezero=true}} (yes) {{/if}}</li>
+        <li>{{#if bluetooth includezero=true}} (yes) {{/if}}</li>
+        <li>{{#if usb includezero=true}} (yes) {{/if}}</li>
+    </ul>
+    {{/with}}
+    <hr>
+    {{#with exterior.wheels}}
+
+    <ul>
+        <li>{{size}}</li>
+        <li>{{type}}</li>
+        <li>{{color}}</li>
+    </ul>
+    {{/with}}
+    <br>
+    {{#with exterior.headlights}}
+    <ul>
+        <li>{{type}}</li>
+        <li>{{brightness}}</li>
+        <li>{{#if automatic includezero=true}} (yes) {{/if}}</li>
+    </ul>
+    {{/with}}
+    <br>
+    {{#with exterior.sunroof}}
+
+    <ul>
+        <li>{{type}}</li>
+        <li>{{size}}</li>
+        <li>{{#if automatic includezero=true}} (yes) {{/if}}</li>
+    </ul>
+
+    {{/with}}
+    <hr>
+    {{#with safety.airbags}}
+    <ul>
+        <li>{{front}}</li>
+        <li>{{side}}</li>
+        <li>{{knee}}</li>
+        <li>{{rear}}</li>
+    </ul>
+    {{/with}}
+    <br>
+    {{#with safety.assistance}}
+    <ul>
+        <li>{{#if blind_spot_monitoring includezero=true}} (yes) {{/if}}</li>
+        <li>{{#if rerar_cross_traffic_alert includezero=true}} (yes) {{/if}}</li>
+        <li>{{#if lane_artudepre_warning includezero=true}} (yes) {{/if}}</li>
+        <li>{{#if adaptive_cruise_control includezero=true}} (yes) {{/if}}</li>
+        <li>{{#if collision_warning includezero=true}} (yes) {{/if}}</li>
+    </ul>
+    {{/with}}
+    <br>
+    {{#with engine}}
+    <ul>
+        <li>{{type}}</li>
+        <li>{{displacement}}</li>
+        <li>{{horsepower}}</li>
+        <li>{{torque}}</li>
+        {{#with tramsmission}}
+        <li>{{type}}</li>
+        <li>{{gears}}</li>
+        {{/with}}
+    </ul>
+    {{/with}}
+    <br>
+    {{#with fuel_economy}}
+    <ul>
+        <li>{{city}}</li>
+        <li>{{highway}}</li>
+        <li>{{combined}}</li>
+    </ul>
+    {{/with}}
+    <br>
+    {{#with price}}
+    <ul>
+        <li>{{base}}</li>
+        <li>{{destination}}</li>
+        {{#with options}}
+        <li>{{navigation}}</li>
+        <li>{{moonroof}}</li>
+        <li>{{premium_paint}}</li>
+        {{/with}}
+        <li>{{total}}</li>
+    </ul>
+    {{/with}}
+</div>
