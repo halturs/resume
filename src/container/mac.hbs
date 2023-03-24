@@ -1,0 +1,109 @@
+<main>
+    <div>
+        <H1>{{name}}</H1>
+    </div>
+    <br>
+    <div>
+        <b>{{description}}</b>
+    </div>
+    <br>
+    <div>
+        <b>{{price}}</b>
+    </div>
+    <br>
+    <div>
+        <b>{{category}}</b>
+    </div>
+    <br>
+    {{#with features.processor}}
+    <ul>
+        <li>{{brand}}</li>
+        <li>{{model}}</li>
+        <li>{{speed}}</li>
+        <li>{{cores}}</li>
+        <li>{{cache}}</li>
+    </ul>
+    {{/with}}
+    <br>
+    {{#with features.memory}}
+    <ul>
+        <li>{{type}}</li>
+        <li>{{size}}</li>
+        <li>{{speed}}</li>
+    </ul>
+    {{/with}}
+    <br>
+    {{#with features.storage}}
+    <ul>
+        <li>{{type}}</li>
+        <li>{{size}}</li>
+    </ul>
+    {{/with}}
+    <br>
+    {{#with features.display}}
+    <ul>
+        <li>{{size}}</li>
+        <li>{{resolution}}</li>
+        <li>{{technology}}</li>
+        <li>{{color_space}}</li>
+        <li>{{brightness}}</li>
+        <li>{{refresh_rate}}</li>
+    </ul>
+    {{/with}}
+    <br>
+    {{#with features.graphics}}
+    <ul>
+        <li>{{brand}}</li>
+        <li>{{model}}</li>
+        <li>{{memory}}</li>
+    </ul>
+    {{/with}}
+    <br>
+    {{#each features.ports}}
+    <ul>
+        <li>{{type}}</li>
+        <li>{{count}}</li>
+        <li>
+
+            {{features}}
+
+        </li>
+
+    </ul>
+    {{/each}}
+    <br>
+    {{#with features.battery}}
+    <ul>
+        <li>{{type}}</li>
+        <li>{{capacity}}</li>
+        <li>{{life}}</li>
+    </ul>
+    {{/with}}
+    <br>
+    {{#with features.weight}}
+    <ul>
+        <li>{{weight}}</li>
+    </ul>
+    {{/with}}
+    <br>
+    {{#with features.dimensions}}
+    <ul>
+        <li>{{height}}</li>
+        <li>{{width}}</li>
+        <li>{{depth}}</li>
+    </ul>
+    {{/with}}
+    <br>
+    {{#with features.operating_system}}
+    <ul>
+        <li>{{ operating_system}}</li>
+    </ul>
+    {{/with}}
+    <br>
+    {{#each features.accessories}}
+    <ul>
+        <li>{{name}}</li>
+        <li>{{price}}</li>
+    </ul>
+    {{/each}}
+</main>
