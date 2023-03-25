@@ -1,0 +1,90 @@
+<main>
+    {{#with heading}}
+    <div>
+        {{#with heading.main}}
+        <h1>{{title}}</h1>
+        <br>
+        <p>{{text}}</p>
+        <br>
+        <button class="btn btn-primary">
+            <span class="text-primary">{{solid}}</span>
+        </button>
+        <br>
+        <br>
+        <button class="btn btn-outline primary">
+            <span class="text-outline-primary">{{outline}}</span>
+        </button>
+        {{/with}}
+        <br>
+        {{#with heading.second}}
+        <h2>{{title}}</h2>
+        <br>
+        <p>{{text}}</p>
+        <br>
+        <button class="btn btn-secondary">
+            <span class="text-secondary">{{solid}}</span>
+        </button>
+        <br>
+        <button class="btn btn-outline-secondary">
+            <span class="text-outline-secondary">{{outline}}</span>
+        </button>
+        <br>
+        {{#with heading.subblock}}
+        <h3>{{title}}</h3>
+        <br>
+        <p>{{text}}</p>
+        <br>
+        <button class="btn btn-dark">
+            <span class="text-dark">{{solid}}</span>
+        </button>
+        <br>
+        <button class="btn btn-outline-dark">
+            <span class="text-outline-dark">{{outline}}</span>
+        </button>
+        {{/with}}
+    </div>
+    {{/with}}
+    <br>
+    {{#with nested_display}}
+    <div>
+        <div class="display-1">{{title}}</div>
+        <br>
+        {{#with nested_display.children_display}}
+        <div class="display-4">{{title}}</div>
+        <br>
+        <p>{{text}}</p>
+        <br>
+        <button class="btn outline-warning">
+            <span text="outline-warning">{{text}}</span>
+        </button>
+        <br>
+        <h6>{{header_text}}</h6>
+        <br>
+        <button class="btn btn-info">
+            <span text="info">{{text}}</span>
+        </button>
+    </div>
+    {{/with}}
+    <br>
+    {{#with paragraf}}
+    <div>
+        <div class="text-uppercase">{{title}}</div>
+        <br>
+        <p>{{text}}</p>
+        <br>
+        <button class="btn btn-link">
+            <span class="text-link">{{text}}</span>
+            <a href="https://google.com"></a>
+        </button>
+        <br>
+        {{#each list_name}}
+        <ul>
+            <li>
+                {{text}}
+                {{url}}
+            </li>
+        </ul>
+        {{/each}}
+    </div>
+    {{/with}}
+</main>
