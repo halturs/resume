@@ -130,32 +130,42 @@
             <br>
             {{#each user.groups}}
             <ul>
-                <li>{{id}}</li>
-                <li>{{name}}</li>
-                <li>{{description}}</li>
+                <div>
+                    <li>{{id}}</li>
+                    <li>{{name}}</li>
+                    <li>{{description}}</li>
+                </div>
                 <br>
-                {{#each user.groups.members}}
-                <li>{{id}}</li>
-                <li>{{name}}</li>
-                <li>{{gender}}</li>
-                <li>{{age}}</li>
-                {{/each}}
+                <div>
+                    {{#each user.groups.members}}
+                    <li>{{id}}</li>
+                    <li>{{name}}</li>
+                    <li>{{gender}}</li>
+                    <li>{{age}}</li>
+                    {{/each}}
+                </div>
                 <br>
-                <li>{{id}}</li>
-                <li>{{name}}</li>
-                <li>{{description}}</li>
+                <div>
+                    <li>{{id}}</li>
+                    <li>{{name}}</li>
+                    <li>{{description}}</li>
+                </div>
                 <br>
-                {{#each user.groups.members}}
-                <li>{{id}}</li>
-                <li>{{name}}</li>
-                <li>{{gender}}</li>
-                <li>{{age}}</li>
-                <br>
-                <li>{{id}}</li>
-                <li>{{name}}</li>
-                <li>{{gender}}</li>
-                <li>{{age}}</li>
-                {{/each}}
+                <div>
+                    {{#each user.groups.members}}
+                    <li>{{id}}</li>
+                    <li>{{name}}</li>
+                    <li>{{gender}}</li>
+                    <li>{{age}}</li>
+
+                    <br>
+
+                    <li>{{id}}</li>
+                    <li>{{name}}</li>
+                    <li>{{gender}}</li>
+                    <li>{{age}}</li>
+                    {{/each}}
+                </div>
                 <br>
             </ul>
             {{/each}}
