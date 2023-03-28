@@ -1,0 +1,67 @@
+<main>
+    {{#with page_header}}
+    <h1 class="text-center">{{title}}</h1>
+    <br>
+    <p class="text-lowercase">{{description}}</p>
+    {{/with}}
+    <br>
+    {{#with section.about_us.title_list}}
+    <div class="display-6 text-end">{{main}}</div>
+    <br>
+    <h2 class="taxt-end">{{sub}}</h2>
+    <br>
+    <button class="btn outline-info">
+        <span class="text-info">{{text}}</span>
+    </button>
+    {{/with}}
+    <br>
+    {{#with section.advantage}}
+    <div class="display-5">{{title}}</div>
+    <br>
+    {{#with section.advantage.efficiency}}
+    <div class="display-4">{{title}}</div>
+    <br>
+    <h6>{{sub_title}}</h6>
+    <br>
+    <p>{{description}}</p>
+    <br>
+    <button class="btn outline-warning">
+        <span class="text outline">{{button}}</span>
+    </button>
+    {{/with}}
+    <br>
+    {{#with section.advantage.innovation}}
+    <div class="text-center display-4">{{title}}</div>
+    <br>
+    <h6>{{sub_title}}</h6>
+    <br>
+    <p>{{description}}</p>
+    <br>
+    <button class="btn outline-warning">
+        <span class="text outline">{{button}}</span>
+    </button>
+    {{/with}}
+    <br>
+    {{#with section.advantage.collaboration}}
+    <div class="text-end display-4">{{title}}</div>
+    <br>
+    <h6 class="text-end">{{sub_title}}</h6>
+    <br>
+    <p class="text-end">{{description}}</p>
+    <br>
+    <button class="btn outline-warning">
+        <span class="text outline">{{button}}</span>
+    </button>
+    {{/with}}
+    <br>
+    {{#with section.agreement}}
+    <div class="display-5">{{title}}</div>
+    <br>
+    <h5>{{sub_title}}</h5>
+    <br>
+    <button class="btn btn-success">{{button}}
+        <span class="text success">{{text}}</span>
+
+    </button>
+    {{/with}}
+</main>
