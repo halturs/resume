@@ -1,50 +1,77 @@
 <main>
-    {{#each navigation.links}}
+
     <div class="card">
-        <div class="card-body">
-            <h5>Shop</h5>
-            <div class="nav flex-column">
-                <div class="nav-item text-end">
+        <div class="d-flex justify-content-end">
+            {{#with navigation}}
+            <h5 class="title-text">{{logo}}</h5>
+            <ul class="nav">
+                <h5 class="title-text">{{logo}}</h5>
+                {{#each links}}
+                <li class="nav-item">
                     <a href="{{href}}" class="nav-link">{{text}}</a>
-                </div>
-            </div>
+                </li>
+                {{/each}}
+
+
+                <li>
+                    <a href="{{logo}}" class="nav-link disabled">Disabled</a>
+                </li>
+            </ul>
+            {{/with}}
         </div>
-        {{/each}}
-        <br>
-        {{#each navigation.logo}}
-        <a href="{{logo}}" class="nav-link disabled">{{logo}}</a>
-        {{/each}}
     </div>
+    <br>
     {{#with newsBlock}}
     <div class="display-6 text-center">{{title}}</div>
-    {{#each newsBlock.cards}}
-    <div class="card row">
-        <div class="card body col bg-gray">
-            <div class="title-text light">{{title}}</div>
-            <span class="text light">{{description}}</span>
-            <span class="badge text-bg-succes rounded-pill">{{isNew}}</span>
-            <span class="badge text-bg-dehger rounded-pill">{{isTop}}</span>
-        </div>
-    </div>
-    {{#each}}
-    {{/with}}
-    <hr>
-    {{#each .tabs}}
-    <div class="row">
-        <div class="col">
-            <div class="nav nav-tabs">
-                <div class="nav-item">
-                    <span class="nav-link">{{isActive}}</span>
-                    <span class="nav-link">{{isDisabled}}</span>
-                    <span class="nav-link">{{text}}</span>
+    {{#each cards}}
+    <div class="container overflow-hidden">
+        <div class="card row g-2">
+            <div class="card-body col-sm-6 mb-3 mb-sm-0 bg-dark">
+
+
+                <div class="card-header text-light">{{title}}
+
+                    <span class="badge text-bg-success rounded-pill">{{isNew}}</span>
+                    <span class="badge text-bg-danger rounded-pill">{{isTop}}</span>
                 </div>
+
+
+                <span class="text-light">{{description}}</span>
+
             </div>
         </div>
     </div>
     {{/each}}
+    {{/with}}
+
+    <hr>
+    <section>
+        {{#with goodsBlock}}
+        <div class="nav nav-tabs mb-5">
+            {{#each tabs}}
+            <div class="nav-item">
+                {{#if isActive}}
+                <a href="#" class="nav-link active">{{text}}</a>
+                {{else}}
+                {{#if isDisabled}}
+                <a href="#" class="nav-link isdisabled">{{text}}</a>
+                {{else}}
+                <a href="#" class="nav-link">{{text}}</a>
+                {{/if}}
+                {{/if}}
+            </div>
+            {{/each}}
+        </div>
+
+        <div class="row">
+            {{#each cards}}
+            {{> shopcard}}
+            {{/each}}
+        </div>
+    </section>
     <br>
     {{#each goodsBlock.cards}}
-    <div class="card row">
+    <div class=" card row">
         <div class="card-body col">
             <img class="card-image-top">{{image}}</img>
             <div class="card-body bg-light">
@@ -60,35 +87,42 @@
     <hr>
     {{#with subscribe}}
     <div class="card">
-        <div class="card-body bg-gray">
-            <h2 class="text light">{{header}}</h2>
-            <p class="text light">{{description}}</p>
-            <button class="btn btn-primary text-end">
-                <span class="text primary">{{text}}</span>
-                <a href="{{link}}"></a>
-            </button>
+        <div class="card-body bg-dark">
+            <h2>
+                <div class="text-light">{{header}}</div>
+                {{#each buttons}}
+                <button class="btn btn-primary">
+                    <span class="text primary">{{text}}</span>
+                    <a href="{{link}}"></a>
+                </button>
+                {{/each}}
+            </h2>
+            <p class="text-light">{{description}}</p>
+
         </div>
     </div>
     {{/with}}
     <hr>
     {{#with service}}
     <div class="card">
-        <div class="card-body bg-success">
-            <h2 class="text light text-center">{{title}}</h2>
-            <p class="text light text-center">{{description}}</p>
+        <div class="card-body bg-success text-center">
+            <h2 class="text-light ">{{title}}</h2>
+            <p class="text-light ">{{description}}</p>
+            {{#each buttons}}
             <button class="btn btn-primary text-center">
                 <span class="text primary">{{text}}</span>
                 <a href="{{link}}"></a>
             </button>
+            {{/each}}
         </div>
     </div>
     {{/with}}
     <hr>
     {{#each footer}}
-    <div class="nav">
-        <div class="nav item">
+    <ul class="nav">
+        <li class="nav item">
             <a href="{{link}}" class="nav-link">{{text}}</a>
-        </div>
-    </div>
+        </li>
+    </ul>
     {{/each}}
 </main>
