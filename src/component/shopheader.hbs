@@ -1,0 +1,31 @@
+<div class="card">
+
+
+    <div class="d-flex justify-content-end">
+
+        {{#with navigation}}
+
+
+        <ul class="nav">
+
+            {{#each links}}
+            <li class="nav-item">
+                <a href="{{href}}" class="nav-link">{{text}}</a>
+            </li>
+            {{/each}}
+
+
+            <li>
+                <a href="#" class="nav-link disabled">Disabled</a>
+            </li>
+
+            {{#with logo}}
+            <li class="nav-item">
+                <h5 class="title-text nav-link">{{logo}}</h5>
+            </li>
+            {{/with}}
+
+        </ul>
+        {{/with}}
+    </div>
+</div>
