@@ -1,7 +1,13 @@
 <main>
 
     <div class="card">
+        {{#with logo}}
 
+        <div class="card-header">
+            <h5 class="display-5">{{logo}}</h5>
+        </div>
+
+        {{/with}}
 
         <div class="d-flex justify-content-end">
 
@@ -20,14 +26,22 @@
                 <li>
                     <a href="#" class="nav-link disabled">Disabled</a>
                 </li>
-                <li class="nav">
-                    {{#with logo}}
-                <li class="nav-item">
-                    <h5 class="title-text nav-link">{{logo}}</h5>
-                </li>
+                {{#with logo}}
+
+                <div class="card-header">
+                    <h5 class="display-5">{{logo}}</h5>
+                </div>
+
                 {{/with}}
-                </li>
             </ul>
+
+            {{#with logo}}
+
+            <div class="card-header">
+                <h5 class="display-5">{{logo}}</h5>
+            </div>
+
+            {{/with}}
 
             {{/with}}
         </div>
@@ -84,39 +98,34 @@
 
     </section>
     <br>
-    <section class="col">
 
-        <div class=" card row-2 ">
 
-            {{#each cards}}
-            <div class=" card row-2 ">
-                <div class="col-3 g-5">
-                    <div class="w-100">
-                        <img class="card-image-top" src="{{image}}" alt="#"></img>
+    <div class=" row">
 
-                        <div class="card text-bg-light">
-                            <h6 class="card-title">{{title}}
+        {{#each cards}}
 
-                                {{#if isHot}}
-                                <span class="badge text-bg-warning rounded-pill">Hot</span>
-                                {{/if}}
-                                {{#if isNew}}
-                                <span class="badge text-bg-primary rounded-pill">New</span>
-                                {{/if}}
-                            </h6>
+        <div class="card col-4">
 
-                            <p>{{description}}</p>
+            <img class="card-image-top" src="{{image}}" alt="#"></img>
 
-                        </div>
-                    </div>
-                </div>
+            <div class="card text-bg-light">
+                <h6 class="card-title">{{title}}
+
+                    {{#if isHot}}
+                    <span class="badge text-bg-warning rounded-pill">Hot</span>
+                    {{/if}}
+                    {{#if isNew}}
+                    <span class="badge text-bg-primary rounded-pill">New</span>
+                    {{/if}}
+                </h6>
+
+                <p>{{description}}</p>
+
             </div>
+
         </div>
         {{/each}}
-        </div>
-        </div>
-
-    </section>
+    </div>
     {{/with}}
     <hr>
     {{#with subscribe}}
@@ -158,11 +167,11 @@
     <br>
     <div class="row">
         <div class="col-8">
-            <div class="nav">
+            <div class="nav ">
                 {{#each footer}}
                 {{#each this}}
                 <div class="col-3">
-                    <ul class="nav nav-tabs">
+                    <ul class="nav-item">
                         <li>
 
                             <a href="{{link}}" class="nav-link">{{text}}</a>
