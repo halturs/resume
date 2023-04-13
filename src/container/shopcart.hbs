@@ -1,0 +1,193 @@
+<main>
+    <div class="row">
+        <div class="col-12">
+            {{#with header}}
+            <div class="header">
+                <H2 class="title-text pt-5 py-5">{{title}}
+                    <div class="text-end">
+                        {{#with button}}
+                        <button class="btn btn-outline-secondary text-outline-secondary ">
+                            <a href="{{link}}">{{text}}</a>
+                        </button>
+                        {{/with}}
+                    </div>
+                </H2>
+            </div>
+            {{/with}}
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row-5">
+        <div class="col-12">
+            {{#each goodsBlock}}
+            <div class="card">
+                <div class="card-body">
+                    <div class="nav-tabs">
+                        <div class="row -5">
+                            <div class="col-2">
+                                <img src="{{image}}">
+                            </div>
+
+
+
+                            <div class="col-4">
+                                <h5 class="title-text">{{name}}</h5>
+                                <span>{{description}}</span>
+                            </div>
+
+
+
+                            <div class="col-2">
+                                {{#with price}}
+                                <div>{{title}}</div>
+                                <div>{{value}}</div>
+                                {{/with}}
+                            </div>
+
+
+
+                            <div class="col-2">
+                                <span>{{amount}}</span>
+                            </div>
+
+
+
+                            <div class="col-2">
+                                {{#each buttons}}
+                                <div>
+                                    {{#if isPrimary}}
+                                    <button class="btn btn-primary text-light">{{text}}</button>
+                                    {{/if}}
+                                </div>
+
+                                <div>
+                                    {{#if isDanger}}
+                                    <button class="btn btn-outline-danger text-outline-danger">{{text}}</button>
+                                    {{/if}}
+                                </div>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <div>
+        <hr>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            {{#with total}}
+            <div class="">
+                <h5 class="title-text">{{title}}</h5>
+
+                <h1 class="text">{{amount}}</h1>
+
+                <span>{{delivery}}</span>
+
+                <div class="text-end">
+                    {{#each buttons}}
+                    <div>
+                        {{#if isSuccess}}
+                        <button class="btn btn-success text-light"><a href="{{link}}">{{text}}</a></button>
+                        {{/if}}
+                    </div>
+
+                    <div>
+                        {{#if isOutline}}
+                        <button class="btn btn-outline-success text-outline-success"><a
+                                href="{{link}}">{{text}}</a></button>
+                        {{/if}}
+                    </div>
+
+                    {{/each}}
+                </div>
+            </div>
+            {{/with}}
+        </div>
+    </div>
+
+    <div>
+        <hr>
+    </div>
+
+    <section class="mt-5">
+
+        {{#with goodsOtherBlock}}
+        <h3 class="title-text text-center">{{title}}</h3>
+        <div class="row">
+
+            {{#each cards}}
+            <div class="card col-4">
+
+
+                <img class="card-image-top" src="{{image}}" alt="#"></img>
+
+                <div class="card text-bg-light">
+                    <h6 class="card-title">{{title}}
+
+                        {{#if isHot}}
+                        <span class="badge text-bg-warning rounded-pill">Hot</span>
+                        {{/if}}
+                        {{#if isNew}}
+                        <span class="badge text-bg-primary rounded-pill">New</span>
+                        {{/if}}
+                    </h6>
+
+                    <p>{{description}}</p>
+
+                </div>
+
+
+            </div>
+
+            {{/each}}
+
+        </div>
+        {{/with}}
+        </div>
+        </div>
+    </section>
+    <div>
+        <hr>
+    </div>
+
+    <div class="row">
+        {{#with subscribe}}
+        <div class="card ">
+            <div class="card-body bg-dark">
+                <h2 class="text-light">{{header}}</h2>
+                <p class="text-light">{{description}}</p>
+                <div class="text-end">
+                    {{#each buttons}}
+
+                    <ul class="btn btn-primary">
+                        <li class="text primary">{{text}}</li>
+                        <a href="{{link}}"></a>
+                    </ul>
+
+                    {{/each}}
+                </div>
+
+
+            </div>
+        </div>
+        {{/with}}
+    </div>
+
+    <div>
+        <hr>
+    </div>
+
+
+
+
+
+
+</main>

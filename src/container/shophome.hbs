@@ -1,48 +1,12 @@
 <main>
-
-    <div class="card">
-        {{#with logo}}
-
-        <div class="card-header">
-            <h5 class="display-5">{{logo}}</h5>
-        </div>
-
-        {{/with}}
-
-        <div class="d-flex justify-content-end">
-
+    <div class="row">
+        <div class="card">
             {{#with navigation}}
-
-
-            <ul class="nav">
-
-                {{#each links}}
-                <li class="nav-item">
-                    <a href="{{href}}" class="nav-link">{{text}}</a>
-                </li>
-                {{/each}}
-
-
-                <li>
-                    <a href="#" class="nav-link disabled">Disabled</a>
-                </li>
-                {{#with logo}}
-
-                <div class="card-header">
-                    <h5 class="display-5">{{logo}}</h5>
-                </div>
-
+            <div class=" nav card-title">
+                {{#with navigation.Logo}}
+                <h3 class="title-text">{{Logo}}</h3>
                 {{/with}}
-            </ul>
-
-            {{#with logo}}
-
-            <div class="card-header">
-                <h5 class="display-5">{{logo}}</h5>
             </div>
-
-            {{/with}}
-
             {{/with}}
         </div>
     </div>
@@ -166,22 +130,23 @@
     <hr>
     <br>
     <div class="row">
-        <div class="col-8">
+        <div class="col">
             <div class="nav ">
                 {{#each footer}}
-                {{#each this}}
-                <div class="col-3">
-                    <ul class="nav-item">
-                        <li>
+                <div class=" flex-column">
+                    {{#each this}}
+                    <div class="col">
+                        <ul class="nav nav-item">
+                            {{#if @last}}
+                            <li><a href="{{link}}" class="nav-link">{{text}}</a></li>
+                            {{else}}
+                            <li>disabled</li>
+                            {{/if}}
+                        </ul>
 
-                            <a href="{{link}}" class="nav-link">{{text}}</a>
-
-                        </li>
-
-                    </ul>
-
+                    </div>
+                    {{/each}}
                 </div>
-                {{/each}}
                 {{/each}}
 
             </div>

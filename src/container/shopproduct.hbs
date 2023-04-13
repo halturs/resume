@@ -1,18 +1,18 @@
 <body>
-    <div class="nav">
-        <ul class="nav nav-tabs">
-            {{#each breadcrumb}}
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="{{url}}" class="nav-link">{{name}}</a>
-
-                </li>
-            </ol>
-
+    <div class="row">
+        <div class="col-12">
+            <ul class=" nav ">
+                {{#each breadcrumb}}
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        {{#if @last}}disabled{{/if}}<a href="{{url}}" class="nav-link">{{name}}</a></li>
+                </ol>
 
 
-            {{/each}}
-        </ul>
+
+                {{/each}}
+            </ul>
+        </div>
     </div>
 
     <div class="row">

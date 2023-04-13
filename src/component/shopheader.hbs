@@ -1,31 +1,29 @@
 <div class="card">
-
-
-    <div class="d-flex justify-content-end">
-
-        {{#with navigation}}
-
-
-        <ul class="nav">
-
-            {{#each links}}
-            <li class="nav-item">
-                <a href="{{href}}" class="nav-link">{{text}}</a>
-            </li>
-            {{/each}}
-
-
-            <li>
-                <a href="#" class="nav-link disabled">Disabled</a>
-            </li>
-
-            {{#with logo}}
-            <li class="nav-item">
-                <h5 class="card-title nav-link">{{logo}}</h5>
-            </li>
-            {{/with}}
-
-        </ul>
+    {{#with navigation}}
+    <div class="card-title">
+        {{#with Logo}}
+        <h3 class="title-text">{{Logo}}</h3>
         {{/with}}
+
+
+        <div class="d-flex justify-content-end">
+            <ul class="nav">
+
+                {{#each links}}
+                <li class="nav-item">
+                    <a href="{{href}}" class="nav-link">{{text}}</a>
+                </li>
+                {{/each}}
+
+
+                <li>
+                    <a href="#" class="nav-link disabled">Disabled</a>
+                </li>
+            </ul>
+        </div>
     </div>
+    {{#with Logo}}
+    <h3 class="title-text">{{Logo}}</h3>
+    {{/with}}
+    {{/with}}
 </div>
