@@ -1,0 +1,57 @@
+<div class="row-5">
+    <div class="col-12">
+        {{#each goodsBlock}}
+        <div class="card">
+            <div class="card-body">
+                <div class="nav-tabs">
+                    <div class="row -5">
+                        <div class="col-2">
+                            <img src="{{image}}">
+                        </div>
+
+
+
+                        <div class="col-4">
+                            <h5 class="title-text">{{name}}</h5>
+                            <span>{{description}}</span>
+                        </div>
+
+
+
+                        <div class="col-2">
+                            {{#with price}}
+                            <div>{{title}}</div>
+                            <div>{{value}}</div>
+                            {{/with}}
+                        </div>
+
+
+
+                        <div class="col-2">
+                            <span>{{amount}}</span>
+                        </div>
+
+
+
+                        <div class="col-2">
+                            {{#each buttons}}
+                            <div>
+                                {{#if isPrimary}}
+                                <button class="btn btn-primary text-light">{{text}}</button>
+                                {{/if}}
+                            </div>
+
+                            <div>
+                                {{#if isDanger}}
+                                <button class="btn btn-outline-danger text-outline-danger">{{text}}</button>
+                                {{/if}}
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

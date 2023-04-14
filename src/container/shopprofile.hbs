@@ -1,0 +1,349 @@
+<main>
+    {{#with navigation}}
+    <div class="row">
+        <div class="col-12">
+            <ul class=" nav ">
+
+                {{#each links}}
+                <ol class="breadcramb">
+                    <li class="breadcramb-item">
+
+                        <a href="{{href}}" class="nav-link">{{text}}</a>
+
+                    </li>
+
+                </ol>
+
+
+
+
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    {{/with}}
+
+
+    {{#with purchase}}
+    <div class="row">
+        <div class="col">
+            <h2 class="text-title">{{header}}</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="nav nav-tabs">
+
+                <div class="nav-item">
+                    <div class="col-3">
+
+                        <strong class="nav-link-active">{{tabs}}</strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    {{#with actionBlock}}
+    <div class="row">
+
+
+        {{#with input}}
+        <div class="col-4">
+            <select class="form-select">
+                <option selected>{{placeholder}}</option>
+            </select>
+        </div>
+        {{/with}}
+
+        <div class="col-5">
+            {{#each buttons}}
+            {{#if isSuccess}}
+            <button class="btn btn-success text-light">{{text}}</button>
+            <a href="{{link}}"></a>
+            {{/if}}
+            {{#if isOutline}}
+            <button class="btn btn-outline-success text-outline-success">{{text}}</button>
+            <a href="{{link}}"></a>
+            {{/if}}
+            {{#if isDanger}}
+            <button class="btn btn-outline-danger text-outline-danger">{{text}}</button>
+            <a href="{{link}}"></a>
+            {{/if}}
+            {{/each}}
+
+        </div>
+    </div>
+    {{/with}}
+
+    <div>
+        <hr>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            {{#each itemList}}
+            <div class="card">
+                <div class="nav-tabs">
+                    <div class="row">
+                        <div class="col-3">
+                            <div>{{number}}</div>
+                            <strong>{{status}}</strong>
+                        </div>
+
+                        {{#with amount}}
+                        <div class="col-2">
+                            <div>{{title}}</div>
+                            <strong>{{value}}</strong>
+                        </div>
+                        {{/with}}
+
+
+
+                        <div class="col-5">
+
+
+
+                            <img class="row" src="{{images}}"></img>
+
+
+
+
+                        </div>
+
+
+
+                        {{#with button}}
+                        <div class="col-2 pt-4">
+                            {{#if isPrimary}}
+                            <button class="btn btn-primary text-light">{{text}}
+                                <a href="{{link}}"></a>
+                            </button>
+                            {{/if}}
+                        </div>
+                        {{/with}}
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    {{/with}}
+
+    <div>
+        <hr>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            {{#with userInfo}}
+            <h2 class="title-text">{{title}}</h2>
+            {{#with profileData}}
+            <div class="card">
+                <h3 class="title-text">{{title}}</h3>
+                {{#with fullName}}
+                <div class="card">
+                    <div class="row g-5">
+                        <div class="col-4">
+                            <ul class="list">
+                                {{#with surname}}
+                                <li><span>{{title}}</span></li>
+                                <li><strong>{{value}}</strong></li>
+                                {{/with}}
+                            </ul>
+                        </div>
+                        <div class="col-4">
+                            <ul class="list">
+                                {{#with name}}
+                                <li><span>{{title}}</span></li>
+                                <li><strong>{{value}}</strong></li>
+                                {{/with}}
+                            </ul>
+                        </div>
+                        <div class="col-4">
+                            <ul class="list">
+                                {{#with middleName}}
+                                <li><span>{{title}}</span></li>
+                                <li><strong>{{value}}</strong></li>
+                                {{/with}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {{/with}}
+
+                {{#with otherInfo}}
+                <div class="card">
+                    <div class="row g-5">
+                        <div class="col-4">
+                            <ul class="list">
+                                {{#with birthday}}
+                                <li><span>{{title}}</span></li>
+                                <li><strong>{{value}}</strong></li>
+                                {{/with}}
+                            </ul>
+                        </div>
+                        <div class="col-4">
+                            <ul class="list">
+                                {{#with sex}}
+                                <li><span>{{title}}</span></li>
+                                <li><strong>{{value}}</strong></li>
+                                {{/with}}
+                            </ul>
+                        </div>
+                        <div class="col-4">
+                            <ul>
+                                {{#with language}}
+                                <li><span>{{title}}</span></li>
+                                <li><strong>{{value}}</strong></li>
+                                {{/with}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {{/with}}
+                {{/with}}
+
+                <div class="card">
+                    {{#each buttons}}
+
+                    <div class="row g-5">
+                        <div class="card-nav">
+                            <div class="row">
+                                <div class="col-4">
+                                    {{#if isPrimary}}
+                                    <button class="btn btn-primary text-light">{{text}}
+                                        <a href="{{link}}"></a>
+                                    </button>
+                                    {{/if}}
+                                </div>
+
+                                <div class="col-4">
+                                    {{#if isSecondary}}
+                                    <button class="btn btn-outline-secondary text-secondary">{{text}}
+                                        <a href="{{link}}"></a>
+                                    </button>
+                                    {{/if}}
+                                </div>
+
+                                <div class="col-4">
+                                    {{#if isDanger}}
+                                    <button class="btn btn-outline-danger text-outline-danger">{{text}}
+                                        <a href="{{link}}"></a>
+                                    </button>
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                {{#with recipients}}
+                <h2 class="title-text">{{title}}</h2>
+                <div class="row">
+                    <div class="card col-4">
+                        {{#each user}}
+                        <strong>{{name}}</strong>
+                        <span>{{phone}}</span>
+                        {{#with button}}
+                        <button class="btn btn-primary text-light">
+                            {{text}} <a href="{{link}}"></a>
+                        </button>
+                        {{/with}}
+                        {{/each}}
+                    </div>
+                </div>
+                {{/with}}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                {{#with contacts}}
+                <h2 class="title-text">{{title}}</h2>
+                <div class="row">
+                    {{#with contactData}}
+                    <div class="card col-3">
+                        {{#with phone}}
+                        <span>{{title}}</span>
+                        <strong>{{value}}</strong>
+                        {{#each buttons}}
+                        {{#if isPrimary}}
+                        <button class="btn btn-primary text-light">
+                            {{text}} <a href="{{link}}"></a>
+                        </button>
+                        {{/if}}
+                        {{/each}}
+                        {{/with}}
+                    </div>
+                    <div class="card col-3">
+                        {{#with additionalPhone}}
+                        <span>{{title}}</span>
+                        <strong>{{value}}</strong>
+
+                        {{/with}}
+                    </div>
+                    <div class="card col-3">
+                        {{#with email}}
+                        <span>{{title}}</span>
+                        <strong>{{value}}</strong>
+
+                        {{/with}}
+                    </div>
+                    {{/with}}
+                    {{#each buttons}}
+                    <div class="row">
+                        <div class=" gap-2">
+                            <div class="col-3">
+                                {{#if isPrimary}}
+                                <button class="btn btn-primary text-light">{{text}}
+                                    <a href="{{link}}"></a>
+                                </button>
+                                {{/if}}
+                            </div>
+
+                            <div class="col-3">
+                                {{#if isSecondary}}
+                                <button class="btn btn-outline-secondary text-secondary">{{text}}
+                                    <a href="{{link}}"></a>
+                                </button>
+                                {{/if}}
+                            </div>
+
+                            <div class="col-3">
+                                {{#if isDanger}}
+                                <button class="btn btn-outline-danger text-outline-danger">{{text}}
+                                    <a href="{{link}}"></a>
+                                </button>
+                                {{/if}}
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+        {{/with}}
+        <div>
+            <hr>
+        </div>
+
+
+</main>
